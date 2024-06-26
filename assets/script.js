@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startTimer() {
+        timerDuration = 25; 
         countdownElement.textContent = timerDuration;
         timerElement.style.display = 'block';
         timer = setInterval(updateTimer, 1000);
@@ -209,8 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timerDuration--;
         countdownElement.textContent = timerDuration;
         if (timerDuration <= 0) {
-            clearInterval(timer);
-            nextQuestion();
+            stopTimer(); 
         }
     }
 
