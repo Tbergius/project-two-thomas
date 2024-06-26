@@ -84,15 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     let currentQuestionIndex = 0;
+    const answers = [];
 
     const startButton = document.getElementById('start-btn');
     const quizContainer = document.querySelector('.quiz');
     const questionElement = document.getElementById('question');
     const answerButtons = document.querySelectorAll('.btn');
+    const nextButton = document.getElementById('next-btn');
+    const resultsContainer = document.querySelector('.results');
+    const resultHouseElement = document.getElementById('result-house');
+    const restartButton = document.getElementById('restart-btn');
 
     function startQuiz() {
         startButton.classList.add('hidden');
         quizContainer.classList.remove('hidden');
+        resultsContainer.classList.add('hidden');
+        currentQuestionIndex = 0;
+        answers.length = 0;
         showQuestion();
     }
 
@@ -104,21 +112,43 @@ document.addEventListener("DOMContentLoaded", () => {
             const button = answerButtons[index];
             button.textContent = answer.text;
             button.classList.remove('selected');
-            button.onclick = () => selectAnswer(answer.value);
+            button.onclick = () => selectAnswer(button, answer.value);
         });
+
+        nextButton.classList.add('hidden');
     }
 
-    function selectAnswer(answer) {
+    function selectAnswer(button, answer) {
         console.log('Selected answer:', answer);
-        // Logic to move to the next question
+        button.classList.add('selected');
+        answers[currentQuestionIndex] = answer;
+        nextButton.classList.remove('hidden');
+    }
+
+    function nextQuestion() {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
             showQuestion();
         } else {
-            // Logic to handle end of quiz
-            console.log('Quiz completed');
+            showResults();
         }
     }
 
+    function showResults() {
+        quizContainer.classList.add('hidden');
+        resultsContainer.classList.remove('hidden');
+
+        const houseCounts = answers.reduce((acc, answer) => {
+            acc[answer] = (acc[answer] || 0) + 1;
+            return acc;
+        }, {});
+
+        const sortedHouses = Object.entries(houseCounts).sort((a, b) => b[1] - a[1]);
+        const resultHouse = sortedHouses[0][0];
+        resultHouseElement.textContent = resultHouse.charAt(0).toUpperCase() + resultHouse.slice(1);
+    }
+
     startButton.addEventListener('click', startQuiz);
+    nextButton.addEventListener('click', nextQuestion);
+    restartButton.addEventListener('click', startQuiz);
 });
