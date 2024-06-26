@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultHouseElement = document.getElementById('result-house');
     const restartButton = document.getElementById('restart-btn');
     const quitButton = document.getElementById('quit-btn');
+    const pageIntro = document.querySelector('.page-intro'); 
 
     function startQuiz() {
         startButton.classList.add('hidden');
@@ -104,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentQuestionIndex = 0;
         answers.length = 0;
         showQuestion();
+        hidePageIntro(); 
     }
 
     function showQuestion() {
@@ -163,6 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
         quizContainer.classList.add('hidden');
         resultsContainer.classList.add('hidden');
         startButton.classList.remove('hidden');
+    }
+
+    function hidePageIntro() {
+        pageIntro.classList.add('hidden');
     }
 
     startButton.addEventListener('click', startQuiz);
