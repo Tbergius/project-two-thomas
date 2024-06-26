@@ -58,3 +58,9 @@ button:disabled {
     border-radius: 10px;
     margin-top: 20px;
 }
+
+/* Styling for the "Stop Searching" button */
+#quit-btn {
+    background-color: #e53935; 
+    color: white;
+}
