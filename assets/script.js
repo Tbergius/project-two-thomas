@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById('start-btn');
     const quizContainer = document.querySelector('.quiz');
     const questionElement = document.getElementById('question');
+    const questionNumberElement = document.getElementById('question-number');
     const answerButtons = document.querySelectorAll('.btn');
     const nextButton = document.getElementById('next-btn');
     const resultsContainer = document.querySelector('.results');
@@ -107,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function showQuestion() {
         const currentQuestion = questions[currentQuestionIndex];
         questionElement.textContent = currentQuestion.question;
+        questionNumberElement.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
         currentQuestion.answers.forEach((answer, index) => {
             const button = answerButtons[index];
