@@ -1,0 +1,11 @@
+/* --------- Global style */
+
+body {
+    background-color: #0c0c0c;
+    color: #d3a625;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
