@@ -94,9 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.getElementById('next-btn');
     const resultsContainer = document.querySelector('.results');
     const resultHouseElement = document.getElementById('result-house');
+    const resultDescriptionElement = document.getElementById('result-description');
     const restartButton = document.getElementById('restart-btn');
     const quitButton = document.getElementById('quit-btn');
-    const pageIntro = document.querySelector('.page-intro'); 
+    const pageIntro = document.querySelector('.page-intro');
 
     function startQuiz() {
         startButton.classList.add('hidden');
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentQuestionIndex = 0;
         answers.length = 0;
         showQuestion();
-        hidePageIntro(); 
+        hidePageIntro();
     }
 
     function showQuestion() {
@@ -116,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentQuestion.answers.forEach((answer, index) => {
             const button = answerButtons[index];
             button.textContent = answer.text;
-            button.classList.remove('selected'); // Ensure all buttons start without 'selected' class
+            button.classList.remove('selected');
             button.onclick = () => selectAnswer(button, answer.value);
         });
 
@@ -124,9 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function selectAnswer(button, answer) {
-        // Clear previous selection
         answerButtons.forEach(btn => btn.classList.remove('selected'));
-        // Highlight current selection
         button.classList.add('selected');
         answers[currentQuestionIndex] = answer;
         nextButton.classList.remove('hidden');
@@ -152,7 +151,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const sortedHouses = Object.entries(houseCounts).sort((a, b) => b[1] - a[1]);
         const resultHouse = sortedHouses[0][0];
+        const resultDescription = getResultDescription(resultHouse);
+
         resultHouseElement.textContent = resultHouse.charAt(0).toUpperCase() + resultHouse.slice(1);
+        resultDescriptionElement.textContent = resultDescription;
+    }
+
+    function getResultDescription(house) {
+        switch (house) {
+            case 'ravenclaw':
+                return "Ravenclaw values intelligence, creativity, learning, and wit. Congratulations on being sorted into Ravenclaw!";
+            case 'slytherin':
+                return "Slytherin values ambition, cunning, leadership, and resourcefulness. Congratulations on being sorted into Slytherin!";
+            case 'hufflepuff':
+                return "Hufflepuff values hard work, dedication, patience, loyalty, and fair play. Congratulations on being sorted into Hufflepuff!";
+            case 'gryffindor':
+                return "Gryffindor values bravery, daring, nerve, and chivalry. Congratulations on being sorted into Gryffindor!";
+            default:
+                return "You have been sorted into a house! Congratulations!";
+        }
     }
 
     function restartQuiz() {
