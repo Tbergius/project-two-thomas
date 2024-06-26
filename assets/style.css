@@ -1,11 +1,47 @@
 /* --------- Global style */
-
 body {
     background-color: #0c0c0c;
     color: #d3a625;
     text-align: center;
+    font-family: 'EB Garamond', serif;
 }
 
 .hidden {
     display: none;
+}
+
+.quiz-area {
+    margin-top: 20px;
+}
+
+button {
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #ccc;
+}
+
+.quiz-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.quiz-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
 }
