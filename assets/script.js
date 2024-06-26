@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         currentQuestion.answers.forEach((answer, index) => {
             const button = answerButtons[index];
             button.textContent = answer.text;
-            button.classList.remove('selected');
+            button.classList.remove('selected'); // Ensure all buttons start without 'selected' class
             button.onclick = () => selectAnswer(button, answer.value);
         });
 
@@ -122,6 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function selectAnswer(button, answer) {
         console.log('Selected answer:', answer);
+        // Clear previous selection
+        answerButtons.forEach(btn => btn.classList.remove('selected'));
+        // Highlight current selection
         button.classList.add('selected');
         answers[currentQuestionIndex] = answer;
         nextButton.classList.remove('hidden');

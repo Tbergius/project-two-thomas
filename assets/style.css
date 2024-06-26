@@ -46,6 +46,12 @@ button:disabled {
     text-align: center;
 }
 
+.btn.selected {
+    background-color: #d3a625; 
+    text-emphasis-color: #d3a625;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
 .results {
     background-color: #333;
     padding: 20px;
