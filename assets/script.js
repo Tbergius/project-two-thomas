@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultsContainer = document.querySelector('.results');
     const resultHouseElement = document.getElementById('result-house');
     const restartButton = document.getElementById('restart-btn');
+    const quitButton = document.getElementById('quit-btn');
 
     function startQuiz() {
         startButton.classList.add('hidden');
@@ -121,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function selectAnswer(button, answer) {
-        console.log('Selected answer:', answer);
         // Clear previous selection
         answerButtons.forEach(btn => btn.classList.remove('selected'));
         // Highlight current selection
@@ -153,7 +153,20 @@ document.addEventListener("DOMContentLoaded", () => {
         resultHouseElement.textContent = resultHouse.charAt(0).toUpperCase() + resultHouse.slice(1);
     }
 
+    function restartQuiz() {
+        resultsContainer.classList.add('hidden');
+        quizContainer.classList.remove('hidden');
+        startQuiz();
+    }
+
+    function quitQuiz() {
+        quizContainer.classList.add('hidden');
+        resultsContainer.classList.add('hidden');
+        startButton.classList.remove('hidden');
+    }
+
     startButton.addEventListener('click', startQuiz);
     nextButton.addEventListener('click', nextQuestion);
-    restartButton.addEventListener('click', startQuiz);
+    restartButton.addEventListener('click', restartQuiz);
+    quitButton.addEventListener('click', quitQuiz);
 });
