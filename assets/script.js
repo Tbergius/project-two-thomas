@@ -98,6 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartButton = document.getElementById('restart-btn');
     const quitButton = document.getElementById('quit-btn');
     const pageIntro = document.querySelector('.page-intro');
+    const timerElement = document.getElementById('timer');
+    const countdownElement = document.getElementById('countdown');
+
+    let timer; 
+    const timerDuration = 25; 
 
     function startQuiz() {
         startButton.classList.add('hidden');
@@ -110,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showQuestion() {
+        resetTimer(); 
+        startTimer(); 
+        timerElement.classList.remove('hidden'); 
         const currentQuestion = questions[currentQuestionIndex];
         questionElement.textContent = currentQuestion.question;
         questionNumberElement.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
@@ -129,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.classList.add('selected');
         answers[currentQuestionIndex] = answer;
         nextButton.classList.remove('hidden');
+        resetTimer();
     }
 
     function nextQuestion() {
@@ -141,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function showResults() {
+        stopTimer();
         quizContainer.classList.add('hidden');
         resultsContainer.classList.remove('hidden');
 
@@ -182,10 +192,36 @@ document.addEventListener("DOMContentLoaded", () => {
         quizContainer.classList.add('hidden');
         resultsContainer.classList.add('hidden');
         startButton.classList.remove('hidden');
+        stopTimer();
     }
 
     function hidePageIntro() {
         pageIntro.classList.add('hidden');
+    }
+
+    function startTimer() {
+        countdownElement.textContent = timerDuration;
+        timerElement.style.display = 'block';
+        timer = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+        timerDuration--;
+        countdownElement.textContent = timerDuration;
+        if (timerDuration <= 0) {
+            clearInterval(timer);
+            nextQuestion();
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(timer);
+        timerElement.classList.add('hidden');
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timerDuration = 25;
     }
 
     startButton.addEventListener('click', startQuiz);
