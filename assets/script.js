@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const countdownElement = document.getElementById('countdown');
 
     let timer; 
-    const timerDuration = 25; 
+    let timerDuration = 25; 
 
     function startQuiz() {
         startButton.classList.add('hidden');
