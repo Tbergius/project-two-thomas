@@ -22,11 +22,27 @@ The live link can be found here - [https://tbergius.github.io/project-two-thomas
 - As a returning user, I would be happy to see that my house stays the same if I choose the same answers
 
 ---
+## Planning
+
+During the planning stage, I realized quite quick that I wanted a simple page, without to much details so the focus would be the quiz. From that perspective, I realized the planning would be fast and have a bit of the same layout feeling of the Love Mats project: the center item is where the action happens.
+
+For the questions, I took a mix of questions so they would not be all the same. With that, I mean that they are not all school related, or what would you do if questions. I also did not like vague questions that you can see in soe of the official Harry Potter quizes such as preferences for dawn or dusk. 
+
+---
 ## Features
 
 ### Pages
 
 There is one page, the main page. As such, no menu, header, or footer is added. It is a simplistica layout, making sure the quiz stands out
+The user is welcomed to the site, with a short introdction, and prompted to start the quiz.
+After starting the quiz, the first question is shown and the introduction is removed. There is also a timer, that counts down from 25 seconds. This timer is added to make the user not think endlessly about the questions, and more select an answer that is first coming to mind. As this quiz is personal and is no competition, the timer simply stops at zero and nothing happens to the user or the quiz - it continues when the player resumes. This is intentional. In an earlier version, the timer was looped and started again when it reached zero. 
+After the 9 questions, that are always in the same order, the user is shows the house based on the answers, with a short house explanation.
+The user can restart the quiz from the final screen.
+
+### Future features and expansions
+
+If I would work more on this project, I would add some images at the end when the house is prompted. This might give the user more fulfillment as right now the user needs to know more what the houses stand for. 
+I would also give the user the option for amount of questions, ranging from 7-25 or so.
 
 ---
 ## Design
@@ -59,12 +75,17 @@ Initially I made a rough sketch of what I wanted, and reasonably quick came to t
 - [Google Fonts](https://fonts.google.com/) - I used the fonts and links to the font from Google Fonts.
 - [Amiresponsive](https://ui.dev/amiresponsive) - For creating the nice picture featured at the start.
 - [w3 validator](https://validator.w3.org/) - The validator used to check the HTML and CSS.
-- [Wave Web Accessibility Evaluation Tool](https://wave.webaim.org/) - to check for accessibility.
 - [Google Chrome DevTools & Lighthouse](https://developer.chrome.com/docs/lighthouse/overview) - For performance review.
 - [Responsive Viewer](https://responsiveviewer.org/) - Used this to test on different devices.
 
 ---
 ## Testing
+
+The testing consist of two major parts: 
+- testing throughout, so any issue is spotted and solved before going on.
+- testing at the end, with validators. This is added to a TESTING.md file that also includes images of results
+
+As a final test, all the buttons were tested and clicked, and they work as intended. 
 
 ---
 ## Deployment
