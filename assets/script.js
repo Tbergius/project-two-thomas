@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Array of questions and corresponding answers, each with a house value
     const questions = [
         { 
             question: "What is your favorite color?", 
@@ -82,10 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
             ] 
         }
     ];
-
+    // Initialize current question index and answers given by the user
     let currentQuestionIndex = 0;
     const answers = [];
 
+    // Get references to HTML elements that will be manipulated during the quiz
     const startButton = document.getElementById('start-btn');
     const quizContainer = document.querySelector('.quiz');
     const questionElement = document.getElementById('question');
@@ -101,9 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const timerElement = document.getElementById('timer');
     const countdownElement = document.getElementById('countdown');
 
+    // Set timer
     let timer; 
     let timerDuration = 25; 
 
+    // Function for starting quiz
     function startQuiz() {
         startButton.classList.add('hidden');
         quizContainer.classList.remove('hidden');
@@ -114,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         hidePageIntro();
     }
 
+    // Function for displaying the current question and answer options
     function showQuestion() {
         resetTimer(); 
         startTimer(); 
@@ -129,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
             button.onclick = () => selectAnswer(button, answer.value);
         });
 
-        nextButton.classList.add('hidden');
+        nextButton.classList.add('hidden'); // Hide next button until an answer is selected
     }
 
     function selectAnswer(button, answer) {
@@ -140,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resetTimer();
     }
 
+    // Function to move to next question or show results when it is the last question
     function nextQuestion() {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
@@ -149,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Function to calculate and display the quiz results
     function showResults() {
         stopTimer();
         quizContainer.classList.add('hidden');
@@ -167,6 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDescriptionElement.textContent = resultDescription;
     }
 
+    // Function to return a description of the sorted house
     function getResultDescription(house) {
         switch (house) {
             case 'ravenclaw':
@@ -182,12 +190,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Function to restart quiz
     function restartQuiz() {
         resultsContainer.classList.add('hidden');
         quizContainer.classList.remove('hidden');
         startQuiz();
     }
 
+    // Function to quit the quiz and get back to start
     function quitQuiz() {
         quizContainer.classList.add('hidden');
         resultsContainer.classList.add('hidden');
@@ -195,10 +205,12 @@ document.addEventListener("DOMContentLoaded", () => {
         stopTimer();
     }
 
+    // Function to hide intro page content
     function hidePageIntro() {
         pageIntro.classList.add('hidden');
     }
 
+    // Function to start timer for every question
     function startTimer() {
         timerDuration = 25; 
         countdownElement.textContent = timerDuration;
@@ -224,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timerDuration = 25;
     }
 
+    // Event listeners for button clicks fo start, navigate, and restarting quiz
     startButton.addEventListener('click', startQuiz);
     nextButton.addEventListener('click', nextQuestion);
     restartButton.addEventListener('click', restartQuiz);
