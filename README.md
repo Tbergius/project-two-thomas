@@ -10,7 +10,7 @@ In this README, I'll walk you through my journey getting to the live site. I hop
 
 ![Resonsive site image](docs/HP-amiresponsive.png)
 
-The live link can be found here - [https://tbergius.github.io/project-two-thomas/] (https://tbergius.github.io/project-two-thomas/)
+The live link can be found here - [Link to live site](https://tbergius.github.io/project-two-thomas/)
 
 ## 1. Purpose of the project
 
@@ -53,7 +53,7 @@ The site has a simplistic approach to ensure the quiz is easy to navigate, and t
 
 ### 5.1 Color Scheme
 
-I knew I wanted a dark page as the initial design, and I chose a gold color for the letters as this looked amazing on one of the other pages I looked at for inspiration. That page was made by Michael Bergmann and can be found here: [https://codepen.io/ice_bergmann/pen/vmjWqg] (https://codepen.io/ice_bergmann/pen/vmjWqg)
+I knew I wanted a dark page as the initial design, and I chose a gold color for the letters as this looked amazing on one of the other pages I looked at for inspiration. That page was made by Michael Bergmann and can be found here: [https://codepen.io/ice_bergmann/pen/vmjWqg](https://codepen.io/ice_bergmann/pen/vmjWqg)
 
 ### 5.2 Typography
 
@@ -166,7 +166,7 @@ To deploy using GitHub pages:
 - Click “Save”, wait for the page to be deployed
 - The URL is displayed above the “Source”
 
-The deployed site can be found here - [https://tbergius.github.io/project-two-thomas/] (https://tbergius.github.io/project-two-thomas/)
+The deployed site can be found here - [https://tbergius.github.io/project-two-thomas/](https://tbergius.github.io/project-two-thomas/)
 
 ### 9.2 Working in Gitpod
 
@@ -180,7 +180,7 @@ To load the project in github, please follow these steps:
 - Wait until the workspace loads
 - Happy coding!
 
-The repository for this project can be found here - [https://github.com/Tbergius/project-two-thomas] (https://github.com/Tbergius/project-two-thomas)
+The repository for this project can be found here - [https://github.com/Tbergius/project-two-thomas](https://github.com/Tbergius/project-two-thomas)
 
 ## 10. Credits and note
 
