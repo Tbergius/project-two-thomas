@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { 
             question: "Your classmate is attacked by a Harpy, what would you do?", 
             answers: [
-                { text: "Trick the Harpy in attacking the tree", value: "ravenclaw" },
+                { text: "Trick the Harpy into attacking the tree", value: "ravenclaw" },
                 { text: "Walk away", value: "slytherin" },
                 { text: "Get help", value: "hufflepuff" },
                 { text: "Attack the harpy", value: "gryffindor" }
