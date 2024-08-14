@@ -35,11 +35,17 @@ Returning Users:
 ## 3. Features
 
 - **Welcome Message:** A friendly introduction that immerses users in the world of Harry Potter, explaining the purpose of the quiz and setting the magical tone.
+![Welcome Message image](docs/welcome-message.png)
 - **Quiz Questions:** A series of carefully crafted questions designed to assess the user's personality traits, preferences, and values, guiding them towards one of the four Hogwarts houses.
+![Quiz Questions image](docs/quiz-questions.png)
 - **Progress Tracker:** A visual indicator that shows users how far they have progressed through the quiz, helping them stay engaged and informed.
+![Progress Tracker image](docs/progress-tracker.png)
 - **House Sorting Result:** After completing the quiz, users receive their Hogwarts house assignment, accompanied by a detailed description of the house's characteristics and what it means to belong to that house.
+- **Retake Option:** Provides users with the ability to retake the quiz once a house is given, allowing them to see if their house assignment changes with different answers.
+![Results and Retake image](docs/results-retake.png)
 - **Responsive Design:** The quiz is fully responsive, ensuring a smooth and visually appealing experience across all devices, including desktops, tablets, and smartphones.
-- **Retake Option:** Provides users with the ability to retake the quiz at any time, allowing them to see if their house assignment changes with different answers.
+For image, please see the image under introductions
+
 
 ## 4. Future Features
 
